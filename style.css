@@ -1,0 +1,29 @@
+/* Header */
+
+.navbar {
+	background-color: #1190cd !important;
+	padding: 0 2rem;
+}
+
+.logo-brand {
+	background: url(https://cdn1.vivareal.com/p/1-ba36604/v/static/app/svg/styleguide/logo/vivareal-5bcdffca.svg)
+		no-repeat 0 44%;
+	background-size: 100%;
+	width: 8vw;
+	height: 100%;
+}
+
+.nav-item {
+	padding: 0.5rem;
+}
+
+.nav-item:hover {
+	background-color: #1085bb;
+}
+
+.nav-link {
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 0.9rem;
+	color: azure !important;
+}
