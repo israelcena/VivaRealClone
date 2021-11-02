@@ -1,3 +1,3 @@
 import FetchApi from "./api/data.js";
 
-console.log(FetchApi().then((data) => console.log(data)));
+FetchApi("rio-de-janeiro", "rj").then((data) => console.log(data));
