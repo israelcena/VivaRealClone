@@ -12,6 +12,10 @@ a {
 	color: inherit;
 }
 
+a:hover {
+	color: inherit;
+}
+
 button {
 	border: none !important;
 }
@@ -77,4 +81,31 @@ body {
 	height: 2.5rem;
 	width: calc(4rem + 0.75rem);
 	border-radius: 5rem;
+}
+
+/* footer */
+
+.bg-footer {
+	background-color: #0a5a80;
+}
+
+.bg-footer-2 {
+	background-color: #094f70;
+}
+
+.site-footer__brand {
+	white-space: nowrap;
+	background: url(https://cdn1.vivareal.com/p/1-ba36604/v/static/app/svg/styleguide/logo/olxbr-branco.svg)
+		no-repeat bottom;
+	background-size: cover;
+	width: 12em;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+.site-footer__brand::before {
+	position: absolute;
+	content: "Uma Empresa";
+	top: -1.5em;
 }
