@@ -11,6 +11,12 @@ button {
 	border: none !important;
 }
 
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
 /* Globals */
 html {
 	font-size: 82%;
