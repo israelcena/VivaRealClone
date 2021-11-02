@@ -14,57 +14,478 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<header>
-			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-				<div class="container-fluid">
-					<a class="navbar-brand logo-brand" href="#">&nbsp;</a>
-					<button
-						class="navbar-toggler"
-						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarSupportedContent"
-						aria-controls="navbarSupportedContent"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="#">Comprar</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" aria-current="page" href="#">Alugar</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Imóveis</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Seleção Viva Real</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Descobrir</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Financiamento</a>
-							</li>
-						</ul>
-						<ul class="navbar-nav d-flex">
-							<li class="nav-item">
-								<a class="nav-link" href="#">Anunciar Imóveis</a>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="#">Entrar</a></li>
-						</ul>
-					</div>
+		<nav class="navbar navbar-expand-lg navbar-dark px-5 py-0">
+			<div class="container-fluid">
+				<a class="navbar-brand logo-brand" href="#">&nbsp;</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="collapse navbar-collapse text-uppercase"
+					id="navbarSupportedContent"
+				>
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item p-3">
+							<a class="nav-link" aria-current="page" href="#">Comprar</a>
+						</li>
+						<li class="nav-item p-3">
+							<a class="nav-link" aria-current="page" href="#">Alugar</a>
+						</li>
+						<li class="nav-item p-3">
+							<a class="nav-link" href="#">Imóveis</a>
+						</li>
+						<li class="nav-item p-3">
+							<a class="nav-link" href="#">Seleção Viva Real</a>
+						</li>
+						<li class="nav-item p-3">
+							<a class="nav-link" href="#">Descobrir</a>
+						</li>
+						<li class="nav-item p-3">
+							<a class="nav-link" href="#">Financiamento</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav d-flex">
+						<li class="nav-item p-3">
+							<a class="nav-link" href="#">Anunciar Imóveis</a>
+						</li>
+						<li class="nav-item p-3">
+							<a class="nav-link" href="#">Entrar</a>
+						</li>
+					</ul>
 				</div>
-			</nav>
-		</header>
-		<main>
-			<aside>
-				<!-- side -->
+			</div>
+		</nav>
+
+		<main class="d-flex m-5">
+			<aside class="text-secondary text-uppercase me-4">
+				<form
+					class="aside-form p-4 mb-5 border border-1 border-warning rounded"
+					id="aside"
+				>
+					<div class="mb-3">
+						<label class="mb-2" for="location">Localização do imóvel</label>
+						<input
+							class="form-control p-3 shadow-sm"
+							type="text"
+							id="location"
+							name="location"
+							placeholder="Digite uma rua, bairro ou cidade"
+						/>
+						<div class="aside-form__location-selected"></div>
+					</div>
+					<div class="text-capitalize my-3">São Paulo - SP x</div>
+					<div class="my-4">
+						<label class="aside-form__tour-label" for="withTour"
+							>Imóvel com</label
+						>
+						<div class="form-check form-switch form-switch-xl">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								role="switch"
+								id="flexSwitchCheckDefault"
+							/>
+							<label
+								class="form-check-label text-capitalize me-2 mt-3"
+								for="flexSwitchCheckDefault"
+								>Tour Virtual ou Vídeos</label
+							>
+						</div>
+					</div>
+					<div class="mb-4">
+						<label class="mb-2" for="type">Tipo do imóvel</label>
+						<select
+							class="form-select shadow-sm py-3 text-secondary"
+							aria-label="Tipo do imóvel"
+							id="type"
+							name="type"
+						>
+							<option value="">Mostrar todos</option>
+							<option value="apartment">Apartamento</option>
+							<option value="house">Casa</option>
+							<option value="house">Casa de Condomínio</option>
+							<option value="house">Casa de Vila</option>
+						</select>
+					</div>
+					<div class="d-flex mb-3">
+						<div class="aside-form__price-range d-flex flex-column me-4">
+							<label class="mb-2" for="price-min">Preço Mínimo</label>
+							<div class="d-flex position-relative">
+								<span
+									class="
+										input-group-text
+										text-secondary
+										position-absolute
+										top-50
+										start-0
+										ms-4
+										translate-middle
+									"
+									id="currency"
+									>R$</span
+								>
+								<input
+									type="text"
+									class="
+										aside-form__price-range-input
+										form-control
+										shadow-sm
+										py-3
+									"
+									id="price-min"
+									name="price-min"
+									maxlength="11"
+									dir="rtl"
+								/>
+							</div>
+						</div>
+						<div class="aside-form__price-range d-flex flex-column">
+							<label class="mb-2" for="price-max">Preço Máximo</label>
+							<div class="d-flex position-relative">
+								<span
+									class="
+										input-group-text
+										text-secondary
+										position-absolute
+										top-50
+										start-0
+										ms-4
+										translate-middle
+									"
+									id="currency"
+									>R$</span
+								>
+								<input
+									type="text"
+									class="
+										aside-form__price-range-input
+										form-control
+										shadow-sm
+										py-3
+									"
+									id="price-max"
+									name="price-max"
+									maxlength="11"
+									dir="rtl"
+								/>
+							</div>
+						</div>
+					</div>
+					<div>
+						<label class="mb-3" for="bedrooms">Número de Quartos</label>
+						<div>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									bg-light
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+								"
+							>
+								1+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									bg-light
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+								"
+							>
+								2+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									bg-light
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+								"
+							>
+								3+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									bg-light
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+								"
+							>
+								4+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									bg-light
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+								"
+							>
+								5+
+							</button>
+						</div>
+					</div>
+				</form>
+
+				<form class="aside-form p-4 rounded border border-1 fw-bolder">
+					<div class="mb-4">
+						<div class="d-flex mb-3">
+							<div class="aside-form__price-range d-flex flex-column me-4">
+								<label class="mb-2" for="price-min">Área Mínima</label>
+								<div class="d-flex position-relative">
+									<span
+										class="
+											input-group-text
+											text-secondary
+											position-absolute
+											top-50
+											end-0
+											translate-middle
+											text-lowercase
+										"
+										id="currency"
+										>m²</span
+									>
+									<input
+										type="text"
+										class="
+											aside-form__price-range-input
+											form-control
+											shadow-sm
+											py-3
+										"
+										id="price-min"
+										name="price-min"
+										maxlength="11"
+									/>
+								</div>
+							</div>
+							<div class="aside-form__price-range d-flex flex-column">
+								<label class="mb-2" for="price-max">Área Máxima</label>
+								<div class="d-flex position-relative">
+									<span
+										class="
+											input-group-text
+											text-secondary
+											position-absolute
+											top-50
+											end-0
+											me-0
+											translate-middle
+											text-lowercase
+										"
+										id="currency"
+										>m²</span
+									>
+									<input
+										type="text"
+										class="
+											aside-form__price-range-input
+											form-control
+											shadow-sm
+											py-3
+										"
+										id="price-max"
+										name="price-max"
+										maxlength="11"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mb-4">
+						<label class="mb-3" for="Garage">Número de Vagas na Garagem</label>
+						<div>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								1+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								2+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								3+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								4+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								5+
+							</button>
+						</div>
+					</div>
+					<div class="mb-1">
+						<label class="mb-3" for="bathrooms">Número de Banheiros</label>
+						<div>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								1+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								2+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								3+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								4+
+							</button>
+							<button
+								type="button"
+								class="
+									btn btn-outline-secondary
+									text-secondary
+									me-3
+									px-3
+									rounded-pill
+									shadow-sm
+									border
+									bg-white
+								"
+							>
+								5+
+							</button>
+						</div>
+					</div>
+				</form>
 			</aside>
-			<section>
+			<section class="bg-primary">
+				main
 				<!-- section -->
 			</section>
 		</main>
