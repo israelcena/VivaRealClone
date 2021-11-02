@@ -1,7 +1,7 @@
-const FetchApi = async (context = "state=sp&city=sao-paulo") => {
+const FetchApi = async (city = "sao-paulo", state = "sp") => {
 	try {
 		const data = await fetch(
-			`https://private-9e061d-piweb.apiary-mock.com/venda?${context}`,
+			`https://private-9e061d-piweb.apiary-mock.com/venda?state=${state}&city=${city}`,
 			{
 				method: "Get",
 			}
