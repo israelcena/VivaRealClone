@@ -83,6 +83,22 @@ body {
 	border-radius: 5rem;
 }
 
+.card-item:hover {
+	cursor: pointer;
+	box-shadow: 1px 1px 5px #ccc;
+	transition: all 0.3s;
+}
+
+.btn-card {
+	background-color: white !important;
+	color: orange;
+}
+
+.btn-card:hover {
+	background-color: orange !important;
+	color: white;
+}
+
 /* footer */
 
 .bg-footer {
